@@ -10,7 +10,7 @@ using namespace std;
 #define ll long long
 #define fi(x) if(!(x))
 #define elfi(x) else fi(x)
-#define ln endl
+#define ln "\n"
 
 //////Vectors//////////
 #define vec vector<
