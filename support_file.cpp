@@ -1,16 +1,19 @@
-#pragma GCC optimize ("Ofast")
+#pragma GCC optimize ("O3")
+#pragma GCC target ("avx2")
 
 #include <bits/stdc++.h>
 
 using namespace std;
 
-#define elif else if      //Python is OP
-#define str string        //Again from Python
+#define elif else if      // Python is OP
+#define str string        // Again from Python
 #define len(x) (x).size() //   :)
-#define ll long long
+#define ll long long int
 #define fi(x) if(!(x))
 #define elfi(x) else fi(x)
 #define ln "\n"
+#define itps(ls, b, e) ls.begin()+s, ls.end()-e
+#define b2e(ls) itps(ls,0,0)
 
 //////Vectors//////////
 #define vec vector<
@@ -58,7 +61,7 @@ bool ispald(It begin, It end) {
     else return true;
 }
 
-//returns different elements from iterable
+// returns different elements from iterable
 template<typename It, typename D> 
 vec D> delmt(It begin, It end, D type) { 
     unordered_set<D> s;
