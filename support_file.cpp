@@ -23,6 +23,11 @@ using namespace std;
 #define pb push_back
 #define fst first
 #define bk back
+template<typename D>
+inline void vecinp(vec D>* v) {
+    D a; cin>>a;
+    (*v).pb(a);
+}
 ///////////////////////
 
 /////////For loops///////////////////////////////////
@@ -51,7 +56,6 @@ template<typename It>
 bool ispald(It begin, It end) { 
     ll flag = 0, n=end-begin;
     To(i,n/2) {
-        cout<<(*(begin+i))<<" "<<(*(end-i-1))<<ln;
         if (*(begin+i) != *(end-i-1)) { 
             flag = 1;
             break;
