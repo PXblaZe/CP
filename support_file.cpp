@@ -12,7 +12,7 @@ using namespace std;
 #define fi(x) if(!(x))
 #define elfi(x) else fi(x)
 #define ln "\n"
-#define itps(ls, b, e) ls.begin()+s, ls.end()-e
+#define itps(ls, b, e) ls.begin()+b, ls.end()-e
 #define b2e(ls) itps(ls,0,0)
 
 //////Vectors//////////
