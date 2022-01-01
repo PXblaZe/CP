@@ -15,22 +15,22 @@ using namespace std;
 #define itps(ls, b, e) ls.begin()+b, ls.end()-e
 #define b2e(ls) itps(ls,0,0)
 
-//////Vectors//////////
+//Vectors////////////////////////
 #define vec vector<
 #define ivec vec int>
 #define svec vec str>
 #define llvec vec ll>
 #define pb push_back
-#define fst first
+#define fnt front
 #define bk back
 template<typename D>
-inline void vecinp(vec D>* v) {
+inline void vecinp(vec D>& v) {
     D a; cin>>a;
-    (*v).pb(a);
+    v.pb(a);
 }
-///////////////////////
+/////////////////////////////////
 
-/////////For loops///////////////////////////////////
+//For loops//////////////////////////////////////////
 #define For(i, s, e) for(register ll i=s; i<e; i++)
 #define Rof(i, s, e) for(register ll i=s; i>e; i--)
 #define To(i, e) For(i, 0, e)
