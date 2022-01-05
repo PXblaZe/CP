@@ -12,8 +12,8 @@ using namespace std;
 #define fi(x) if(!(x))
 #define elfi(x) else fi(x)
 #define ln "\n"
-#define itps(ls, b, e) ls.begin()+b, ls.end()-e
-#define b2e(ls) itps(ls,0,0)
+#define itps(ls, b, e) ls.begin()+b, ls.begin()+e
+#define b2e(ls) ls.begin(), ls.end()
 
 //Vectors////////////////////////
 #define vec vector<
@@ -103,6 +103,6 @@ signed main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int t; cin>>t;
+    ll t; cin>>t;
     while(t--) solve();
 }
