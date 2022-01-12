@@ -96,13 +96,19 @@ auto cyldif( It begin, It end, D elmA, D elmB, bool least = true) {
     else return end-begin-d;
 }
 
+
+#define tests
+
 //solution
 void solve() {}
 
 signed main() {
     ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    ll t; cin>>t;
-    while(t--) solve();
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    #ifdef tests
+    ll t; cin >> t;
+    while(t--) 
+    #endif
+    solve();
 }
