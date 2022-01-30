@@ -96,7 +96,7 @@ auto cyldif( It begin, It end, D elmA, D elmB, bool least = true) {
     else return end-begin-d;
 }
 
-
+#define OJ
 #define tests
 
 //solution
@@ -106,9 +106,13 @@ signed main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
+    #ifndef OJ
+	    freopen("../input.txt", "r", stdin);
+	    freopen("../output.txt", "w", stdout);
+    #endif
     #ifdef tests
-    ll t; cin >> t;
-    while(t--) 
+        ll t; cin >> t;
+        while(t--) 
     #endif
     solve();
 }
