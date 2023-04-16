@@ -1,114 +1,108 @@
-#pragma GCC target ("avx2")
+/***************************************************************\
+                I tell computers to do things,
+                    Sometimes they listen.
+    Author  : PXblaZe
+    Problem : --problem link--
+    Insta   : ig_sumit10
+    GitHub  : https://github.com/PXblaZe
+\***************************************************************/
+
 #pragma GCC optimize ("Ofast")
+#pragma GCC target ("avx,avx2,fma")
 
 #include <bits/stdc++.h>
 
 using namespace std;
 
-#define elif else if      // Python is OP
-#define str string        // Again from Python
-#define len(x) (x).size() //   :)
-#define ll long long int
-#define fi(x) if(!(x))
-#define elfi(x) else fi(x)
-#define ln "\n"
+#define elif           else if 
+#define str            string
+#define len(x)         (x).size() //   :)
+#define ll             long long int
+#define fi(x)          if(!(x))
+#define elfi(x)        else fi(x)
+#define ln             '\n'
 #define itps(ls, b, e) ls.begin()+b, ls.begin()+e
-#define b2e(ls) ls.begin(), ls.end()
+#define b2e(ls)        ls.begin(), ls.end()
+#define arinp(ar, sze) Rep(sze) cin >> ar[_]
 
-//Vectors////////////////////////
-#define vec vector<
-#define ivec vec int>
-#define svec vec str>
-#define llvec vec ll>
-#define pb push_back
-#define fnt front
-#define bk back
+//Vectors////////////////////////////////////////////
+#define vec            vector<
+#define ivec           vec int>
+#define svec           vec str>
+#define llvec          vec ll>
+#define pb             push_back
+#define fnt            front
+#define bk             back
 template<typename D>
 inline void vecinp(vec D>& v) {
     D a; cin>>a;
     v.pb(a);
 }
-/////////////////////////////////
-
-//For loops//////////////////////////////////////////
-#define For(i, s, e) for(register ll i=s; i<e; i++)
-#define Rof(i, s, e) for(register ll i=s; i>e; i--)
-#define To(i, e) For(i, 0, e)
-#define Rto(i, s) Rof(i, s, -1)
-#define Rep(e) To(_, e)
 /////////////////////////////////////////////////////
 
 
-// Summation
-int Sum(int n) {
-    if(n<1) return 0;
-    else return n+Sum(n-1);
+//For loops//////////////////////////////////////////
+#define For(i, s, e) for(ll i=s; i<e; i++)
+#define Rof(i, s, e) for(ll i=s; i>e; i--)
+#define To(i, e)     For(i, 0, e)
+#define Rto(i, s)    Rof(i, s, -1)
+#define Rep(e)       To(_, e)
+/////////////////////////////////////////////////////
+
+
+// Greatest Common Divisor
+inline ll gcd(ll a, ll b) {
+    return b == 0 ? a : gcd(b, a % b);   
 }
 
-// Factorial
-int fact(int n) {
-    if(n==1) return 1;
-    else return n*fact(n-1);
+// Least Common Multiple
+inline ll lcm(ll a, ll b) {
+    return (a*b) / gcd(a, b);
 }
 
 // To check the iterable is palindrome
 template<typename It>
-bool ispald(It begin, It end) { 
-    ll flag = 0, n=end-begin;
-    To(i,n/2) {
-        if (*(begin+i) != *(end-i-1)) { 
-            flag = 1;
-            break;
-        }
-    }
-    if (flag == 1)return false;
-    else return true;
+bool ispald(It begin, It end) {
+    To(i, (end-begin)/2)
+        if (*(begin+i) != *(end-i-1))
+            return false;
+    return true;
 }
 
-// returns different elements from iterable
-template<typename It, typename D> 
-vec D> delmt(It begin, It end, D type) { 
-    unordered_set<D> s;
-    vec D> v;
-    while(begin!=end) {
-        D f = *begin;
-        if(s.find(f)==s.end()) {
-            s.insert(f);
-            v.pb(f);
-        }
-        begin++;
-    }
-    return v;
-}
-
-// returns least/max pos diff b/w elmA & elmB
-template< typename It,typename D>
-auto cyldif( It begin, It end, D elmA, D elmB, bool least = true) {
-    ll d=0;
-    D c = elmA;
-    D b = &(*begin), e = &(*end);
-    while(c!=elmB&&elmA!=elmB) {
-        if(c==b) {c = e; continue;}
-        if(elmA==e) {elmA=b; continue;}
-        --c;++elmA;d++;
-    }
-    if(least) return d;
-    else return end-begin-d;
-}
 
 #define OJ
 #define tests
 
-//solution
-void solve() {}
+#ifdef OJ
+#define debug(...)
+#else
+template<typename T, typename enable_if<__is_one_of<T, int, char, ll, double, float, long double, str, bool>::value, int>::type = 0>
+void __printx__(const T& x) {cerr << x;}
+template<typename K, typename V> void __printx__(const pair<K, V>& x) {cerr << '{' << x.first << ", " << x.second << '}';}
+template<typename C, typename enable_if<!__is_one_of<C, int, char, ll, double, float, long double, str, bool>::value, int>::type = 0>
+void __printx__(const C& x) {
+    cerr << '{';
+    bool f = false;
+    for (typename C::value_type c: x) {
+        if (f) cerr << ", ";
+        __printx__(c);
+        if (!f) f = true;
+    }
+    cerr << '}';
+}
+#define debug(x) cerr << '[' << #x << ", " << __LINE__ <<  "]: ", __printx__(x), cerr << ln;
+#endif
+
+//Solution///////////////////////////////////////////////////////////
+void solve() {--Solution starts here--}
 
 signed main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
     #ifndef OJ
-	    freopen("../input.txt", "r", stdin);
-	    freopen("../output.txt", "w", stdout);
+        freopen("/home/blaze/Codes/Cpp/CP/input.txt", "r", stdin);
+        freopen("/home/blaze/Codes/Cpp/CP/output.txt", "w", stdout);
     #endif
     #ifdef tests
         ll t; cin >> t;
@@ -116,3 +110,4 @@ signed main() {
     #endif
     solve();
 }
+/////////////////////////////////////////////////////////////////////
